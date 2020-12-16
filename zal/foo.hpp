@@ -11,11 +11,11 @@ using namespace std;
 vector< char > foo(list< Human >& people)
 {
     vector< char > ret_v(people.size());
-    auto monster=[](Human H;){
+    auto monster=[](Human& H;){
       if(H.isMonster()) return 'n';
       else return 'y';
     }
-    for_each(people.begin(),people.end(),[](Human H;){return H.birthday();});
+    for_each(people.begin(),people.end(),[](Human& H;){return H.birthday();});
     transform(people.begin(),people.end(),ret_v.begin(),monster);
     return ret_v;
 }
