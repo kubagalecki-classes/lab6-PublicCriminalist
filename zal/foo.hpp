@@ -12,8 +12,8 @@ vector< char > foo(list< Human >& people)
 {
     vector< char > ret_v(people.size());
     auto monster=[](Human& H;){
-      if(H.isMonster()) return 'n';
-      else return 'y';
+      if(H.isMonster()) return 'y';
+      else return 'n';
     }
     for_each(people.begin(),people.end(),[](Human& H;){return H.birthday();});
     transform(people.begin(),people.end(),ret_v.begin(),monster);
